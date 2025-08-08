@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>PlaceholderOS - Midweight Simple Stable Desktop OS</title>
+    <meta name="description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="keywords" content="Linux, PlaceholderOS, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
+    <meta name="author" content="PlaceholderOS Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://PlaceholderOS.example.com/">
+    <link rel='shortlink' href="https://PlaceholderOS.example.com/"/>
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://PlaceholderOS.example.com/">
+    <meta property="og:title" content="PlaceholderOS - Midweight Simple Stable Desktop OS">
+    <meta property="og:description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta property="og:image" content="https://placehold.co/1200x630/55595c/ffffff?text=PlaceholderOS">
+    <meta property="og:site_name" content="PlaceholderOS">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://PlaceholderOS.example.com/">
+    <meta name="twitter:title" content="PlaceholderOS - Midweight Simple Stable Desktop OS">
+    <meta name="twitter:description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/55595c/ffffff?text=PlaceholderOS">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS from CDN -->
+    <!-- This link fetches the latest Bootstrap 5 styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom CSS for minor style adjustments -->
+    <style>
+        /* Make the body have a light gray background */
+        body {
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Adds the gradient */
+            background-color: #f8f9fa; /* Fallback for older browsers */
+            font-family: 'Inter', sans-serif; /* A clean, modern font */
+        }
+        /* Style for the main content area */
+        .main-content {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        /* Style for the footer */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .hero-section {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+        }
+        .card-img-top {
+            height: 180px;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+        }
+        #countdown-timer {
+            color: #343a40;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- ======================= Navbar ======================= -->
+    <!-- The 'sticky-top' class makes the navbar persistent on scroll -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container-fluid">
+            <!-- Website Brand/Logo -->
+            <a class="navbar-brand fw-bold" href="#">PlaceholderOS</a>
+
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS/wiki/Install-Guide">Install Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS/discussions">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS">Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================= Main Content ======================= -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="p-5 mb-4 rounded-3 hero-section">
+                <div class="container-fluid">
+                   <div class="row align-items-center">
+                       <!-- Image: Appears first in code to be on top on mobile, but second on desktop via 'order-lg-2' -->
+                       <div class="col-lg-5 order-lg-2 mb-4 mb-lg-0">
+                           <img src="https://placehold.co/600x400/55595c/ffffff?text=PlaceholderOS" class="img-fluid rounded shadow" alt="PlaceholderOS Desktop Placeholder">
+                       </div>
+                       <!-- Text content: Appears second in code, but first on desktop via 'order-lg-1' -->
+                       <div class="col-lg-7 order-lg-1">
+                           <h1 class="display-5 fw-bold">Introducing PlaceholderOS</h1>
+                           <p class="fs-5 text-muted">A Midweight, Simple, and Stable Desktop OS</p>
+                           <p class="fs-4">PlaceholderOS is an open-source Linux distribution based on Devuan OS (a version of Debian that doesn't use systemd). It features a customized Openbox window manager that provides a complete desktop environment, including a taskbar, system tray, and more.</p>
+                           <!-- Countdown Timer and Button Container -->
+                           <div class="mt-4">
+                               <p class="fs-5 mb-2">Estimated release: August 30, 2025. This date is subject to change.</p>
+                               <div id="countdown-timer" class="fs-3 mb-3 fw-bold"></div>
+                               <a href="/download" id="download-button" class="btn btn-primary btn-lg" role="button">Download (Not available yet)</a>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+
+            <!-- Responsive Grid System with Linux-related content -->
+            <div class="row text-center">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/3498db/ffffff?text=Midweight" class="card-img-top" alt="Midweight OS">
+                        <div class="card-body">
+                            <h5 class="card-title">Midweight & Fast</h5>
+                            <p class="card-text">Built with a customized Openbox window manager, PlaceholderOS is designed to be fast and efficient, running smoothly even on older 64-bit hardware (like the Core 2 Duo).</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Community" class="card-img-top" alt="Community Driven">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Driven</h5>
+                            <p class="card-text">As an open-source project, our development is guided by user feedback. Join our forums to help shape the future of PlaceholderOS.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/e74c3c/ffffff?text=Secure" class="card-img-top" alt="Secure OS">
+                        <div class="card-body">
+                            <h5 class="card-title">Secure & Reliable</h5>
+                            <p class="card-text">Based on the solid foundation of Devuan/Debian Linux, PlaceholderOS benefits from robust security features and a stable, reliable core system.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/9b59b6/ffffff?text=Offline-Ready" class="card-img-top" alt="Preloaded Apps">
+                        <div class="card-body">
+                            <h5 class="card-title">Preloaded with Apps for Offline Use</h5>
+                            <p class="card-text">It's ready out of the box with multimedia codecs, games, LibreOffice, printer support, and top apps like GIMP, Inkscape, VLC, and OBS Studio.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/f1c40f/ffffff?text=Drivers" class="card-img-top" alt="Driver Compatibility">
+                        <div class="card-body">
+                            <h5 class="card-title">Broad Driver Compatibility</h5>
+                            <p class="card-text">Includes many proprietary firmware packages from the Debian non-free repository for out-of-the-box hardware support.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/400x250/e67e22/ffffff?text=NVIDIA" class="card-img-top" alt="NVIDIA Drivers">
+                        <div class="card-body">
+                            <h5 class="card-title">Easy NVIDIA Driver Installation</h5>
+                            <p class="card-text">A simple one-click installer is included for proprietary NVIDIA drivers (requires an internet connection).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Adding extra content to demonstrate scrolling -->
+            <div class="p-5 my-4 bg-light rounded-3">
+                <h2>Meet the PlaceholderOS Desktop Environment (Based on Openbox)</h2>
+                <p>Our midweight desktop environment aims to be fast and resource-efficient, while still being attractive and user-friendly. It augments the native Openbox configuration with unique features:</p>
+                <ul>
+                <li>Placeholder: Feature 1 description goes here.</li>
+                <li>Placeholder: Feature 2 description goes here.</li>
+                <li>Placeholder: Feature 3 description goes here.</li>
+                </ul>
+                <p>It supports a wide range of hardware, from older 64-bit laptops to modern desktops.</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- ======================= Footer ======================= -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PlaceholderOS. All Rights Reserved. Licensed under MIT. Made with love in Indonesia.</p>
+        </div>
+    </footer>
+
+
+    <!-- ======================= Scripts ======================= -->
+    <!-- Placed at the end of the body to allow the page content to load first -->
+
+    <!-- jQuery (Not required by Bootstrap 5, but included as per your request) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDiC/RI=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Bundle JS (includes Popper.js for tooltips, popovers, and dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Aug 30, 2025 00:00:00").getTime();
+
+        // Get the elements to update
+        const countdownElement = document.getElementById("countdown-timer");
+        const downloadButton = document.getElementById("download-button");
+
+        // Update the count down every hour to be less distracting
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date();
+            const distance = countDownDate - now.getTime();
+
+            // If the count down is finished, show release text
+            if (distance < 0) {
+                clearInterval(x);
+                countdownElement.innerHTML = "AVAILABLE NOW!";
+                downloadButton.textContent = "Download";
+                downloadButton.classList.remove("btn-primary");
+                downloadButton.classList.add("btn-success");
+                return; // Exit the function
+            }
+            
+            // --- New logic for an estimated, less precise countdown ---
+            const releaseDate = new Date(countDownDate);
+            
+            // Calculate the difference in months
+            let months = (releaseDate.getFullYear() - now.getFullYear()) * 12;
+            months -= now.getMonth();
+            months += releaseDate.getMonth();
+            
+            // Adjust for days
+            if (releaseDate.getDate() < now.getDate()) {
+                months--;
+            }
+
+            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+
+            let output = "Approx. ";
+            if (months > 0) {
+                output += `${months} month${months > 1 ? 's' : ''}`;
+            }
+            
+            // Display the result
+            countdownElement.innerHTML = output;
+
+        }, 3600000); // Update every hour
+
+        // Run once immediately on page load
+        (function(){
+            const now = new Date();
+            const distance = countDownDate - now.getTime();
+            if (distance < 0) {
+                 clearInterval(x);
+                 countdownElement.innerHTML = "AVAILABLE NOW!";
+                 downloadButton.textContent = "Download";
+                 downloadButton.classList.remove("btn-primary");
+                 downloadButton.classList.add("btn-success");
+                 return;
+            }
+            const releaseDate = new Date(countDownDate);
+            let months = (releaseDate.getFullYear() - now.getFullYear()) * 12;
+            months -= now.getMonth();
+            months += releaseDate.getMonth();
+            if (releaseDate.getDate() < now.getDate()) {
+                months--;
+            }
+            let output = "Approx. ";
+            if (months > 0) {
+                output += `${months} month${months > 1 ? 's' : ''}`;
+            } else {
+                 const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
+                 output += `${days} day${days > 1 ? 's' : ''}`;
+            }
+            countdownElement.innerHTML = output;
+        })();
+    </script>
+
+</body>
+</html>
