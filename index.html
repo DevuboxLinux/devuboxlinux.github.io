@@ -1,71 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <!-- Required meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>PlaceholderOS - Midweight Simple Stable Desktop OS</title>
-    <meta name="description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
-    <meta name="keywords" content="Linux, PlaceholderOS, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
-    <meta name="author" content="PlaceholderOS Team">
+    <title>Devubox-MX - Midweight Simple Stable Desktop OS</title>
+    <meta name="description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="keywords" content="Linux, Devubox-MX, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
+    <meta name="author" content="Devubox-MX Team">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://PlaceholderOS.example.com/">
-    <link rel='shortlink' href="https://PlaceholderOS.example.com/"/>
+    <link rel="canonical" href="https://devuboxlinux.github.io/">
+    <link rel='shortlink' href="https://devuboxlinux.github.io/"/>
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://PlaceholderOS.example.com/">
-    <meta property="og:title" content="PlaceholderOS - Midweight Simple Stable Desktop OS">
-    <meta property="og:description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
-    <meta property="og:image" content="https://placehold.co/1200x630/55595c/ffffff?text=PlaceholderOS">
-    <meta property="og:site_name" content="PlaceholderOS">
+    <meta property="og:url" content="https://devuboxlinux.github.io/">
+    <meta property="og:title" content="Devubox-MX - Midweight Simple Stable Desktop OS">
+    <meta property="og:description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta property="og:image" content="https://placehold.co/1200x630/55595c/ffffff?text=Devubox-MX">
+    <meta property="og:site_name" content="Devubox-MX">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://PlaceholderOS.example.com/">
-    <meta name="twitter:title" content="PlaceholderOS - Midweight Simple Stable Desktop OS">
-    <meta name="twitter:description" content="PlaceholderOS is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/55595c/ffffff?text=PlaceholderOS">
+    <meta name="twitter:url" content="https://devuboxlinux.github.io/">
+    <meta name="twitter:title" content="Devubox-MX - Midweight Simple Stable Desktop OS">
+    <meta name="twitter:description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/55595c/ffffff?text=Devubox-MX">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS from CDN -->
     <!-- This link fetches the latest Bootstrap 5 styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Custom CSS for minor style adjustments -->
+    <!-- Custom CSS for minor style adjustments and dark mode -->
     <style>
-        /* Make the body have a light gray background */
+        :root {
+            --body-bg-light: linear-gradient(to right, #e2e2e2, #c9d6ff);
+            --body-bg-dark: linear-gradient(to right, #232526, #414345);
+            --hero-bg-light: rgba(255, 255, 255, 0.8);
+            --hero-bg-dark: rgba(33, 37, 41, 0.8);
+            --text-light: #212529;
+            --text-dark: #f8f9fa;
+            --section-bg-light: #f8f9fa;
+            --section-bg-dark: #212529;
+        }
+
         body {
-            background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Adds the gradient */
-            background-color: #f8f9fa; /* Fallback for older browsers */
-            font-family: 'Inter', sans-serif; /* A clean, modern font */
+            background: var(--body-bg-light);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
         }
-        /* Style for the main content area */
-        .main-content {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        /* Style for the footer */
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-        }
+        .main-content { padding-top: 3rem; padding-bottom: 3rem; }
+        .footer { background-color: #343a40; color: white; padding: 1.5rem 0; text-align: center; }
+        
         .hero-section {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
+            background-color: var(--hero-bg-light);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+        
         .card-img-top {
-            height: 180px;
-            object-fit: cover; /* Ensures images cover the area without distortion */
+            height: 200px; width: 200px; object-fit: cover;
+            margin: 1rem auto; border-radius: 15px;
         }
-        #countdown-timer {
-            color: #343a40;
+        
+        #countdown-timer { color: var(--text-light); }
+        
+        .hero-image-container { perspective: 1000px; }
+        .hero-image-3d {
+            transform: rotateY(-20deg) rotateX(0deg);
+            transition: transform 0.5s ease;
         }
+        .hero-image-3d:hover { transform: rotateY(0) rotateX(0); }
+
+        /* Dark Mode Styles */
+        [data-bs-theme="dark"] body {
+            background: var(--body-bg-dark);
+        }
+        [data-bs-theme="dark"] .hero-section {
+            background-color: var(--hero-bg-dark);
+            color: var(--text-dark);
+        }
+        [data-bs-theme="dark"] #countdown-timer,
+        [data-bs-theme="dark"] .text-muted {
+            color: #adb5bd !important;
+        }
+        [data-bs-theme="dark"] .bg-light {
+            background-color: var(--section-bg-dark) !important;
+        }
+
+        /* Theme toggle icon styling */
+        .theme-toggle {
+            cursor: pointer;
+        }
+        .theme-toggle .sun-icon, .theme-toggle .moon-icon {
+            transition: transform 0.3s ease;
+        }
+        [data-bs-theme="dark"] .sun-icon { display: inline-block; }
+        [data-bs-theme="dark"] .moon-icon { display: none; }
+        [data-bs-theme="light"] .sun-icon { display: none; }
+        [data-bs-theme="light"] .moon-icon { display: inline-block; }
     </style>
 
     <!-- Google Fonts -->
@@ -77,37 +114,25 @@
 <body>
 
     <!-- ======================= Navbar ======================= -->
-    <!-- The 'sticky-top' class makes the navbar persistent on scroll -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div class="container-fluid">
-            <!-- Website Brand/Logo -->
-            <a class="navbar-brand fw-bold" href="#">PlaceholderOS</a>
-
-            <!-- Hamburger Menu Button -->
+            <a class="navbar-brand fw-bold" href="#">Devubox-MX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Collapsible Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS/wiki/Install-Guide">Install Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS/discussions">Forum</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/PlaceholderOS/PlaceholderOS">Source Code</a>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/wiki/Install-Guide">Install Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/discussions">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/">Source Code</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme">
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -121,18 +146,15 @@
             <div class="p-5 mb-4 rounded-3 hero-section">
                 <div class="container-fluid">
                    <div class="row align-items-center">
-                       <!-- Image: Appears first in code to be on top on mobile, but second on desktop via 'order-lg-2' -->
-                       <div class="col-lg-5 order-lg-2 mb-4 mb-lg-0">
-                           <img src="https://placehold.co/600x400/55595c/ffffff?text=PlaceholderOS" class="img-fluid rounded shadow" alt="PlaceholderOS Desktop Placeholder">
+                       <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
+                           <img src="https://raw.githubusercontent.com/minios-linux/minios-live/refs/heads/master/linux-live/scripts/04-xfce-desktop/rootcopy-install/usr/share/backgrounds/MiniOS3-background-black.svg" class="img-fluid rounded shadow hero-image-3d" alt="Devubox-MX Desktop Placeholder">
                        </div>
-                       <!-- Text content: Appears second in code, but first on desktop via 'order-lg-1' -->
-                       <div class="col-lg-7 order-lg-1">
-                           <h1 class="display-5 fw-bold">Introducing PlaceholderOS</h1>
-                           <p class="fs-5 text-muted">A Midweight, Simple, and Stable Desktop OS</p>
-                           <p class="fs-4">PlaceholderOS is an open-source Linux distribution based on Devuan OS (a version of Debian that doesn't use systemd). It features a customized Openbox window manager that provides a complete desktop environment, including a taskbar, system tray, and more.</p>
-                           <!-- Countdown Timer and Button Container -->
+                       <div class="col-lg-6 order-lg-1">
+                           <h1 class="display-6 fw-bold">Introducing Devubox-MX</h1>
+                           <p class="fs-6 text-muted">A Midweight, Simple, and Stable Desktop OS</p>
+                           <p class="fs-">Devubox-MX is an open-source Linux distribution based on Devuan OS (a version of Debian that doesn't use systemd). It features a customized Openbox window manager that provides a complete desktop environment, including a taskbar, system tray, and more.</p>
                            <div class="mt-4">
-                               <p class="fs-5 mb-2">Estimated release: August 30, 2025. This date is subject to change.</p>
+                               <p class="fs-5 mb-2">Estimated alpha release: August 30, 2025. This date is subject to change.</p>
                                <div id="countdown-timer" class="fs-3 mb-3 fw-bold"></div>
                                <a href="/download" id="download-button" class="btn btn-primary btn-lg" role="button">Download (Not available yet)</a>
                            </div>
@@ -146,38 +168,38 @@
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/3498db/ffffff?text=Midweight" class="card-img-top" alt="Midweight OS">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/gnome-usage.svg" class="card-img-top" alt="Midweight OS">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Midweight & Fast</h5>
-                            <p class="card-text">Built with a customized Openbox window manager, PlaceholderOS is designed to be fast and efficient, running smoothly even on older 64-bit hardware (like the Core 2 Duo).</p>
+                            <p class="card-text">Built with a customized Openbox window manager, Devubox-MX is designed to be fast and efficient, running smoothly even on older 64-bit hardware (like the Core 2 Duo).</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Community" class="card-img-top" alt="Community Driven">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/github.svg" class="card-img-top" alt="Community Driven">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Community Driven</h5>
-                            <p class="card-text">As an open-source project, our development is guided by user feedback. Join our forums to help shape the future of PlaceholderOS.</p>
+                            <p class="card-text">As an open-source project, our development is guided by user feedback. Join our forums to help shape the future of Devubox-MX.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/e74c3c/ffffff?text=Secure" class="card-img-top" alt="Secure OS">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/gufw.svg" class="card-img-top" alt="Secure OS">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Secure & Reliable</h5>
-                            <p class="card-text">Based on the solid foundation of Devuan/Debian Linux, PlaceholderOS benefits from robust security features and a stable, reliable core system.</p>
+                            <p class="card-text">Based on the solid foundation of Devuan/Debian Linux, Devubox-MX benefits from robust security features and a stable, reliable core system.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/9b59b6/ffffff?text=Offline-Ready" class="card-img-top" alt="Preloaded Apps">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/knemo.svg" class="card-img-top" alt="Preloaded Apps">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Preloaded with Apps for Offline Use</h5>
                             <p class="card-text">It's ready out of the box with multimedia codecs, games, LibreOffice, printer support, and top apps like GIMP, Inkscape, VLC, and OBS Studio.</p>
                         </div>
@@ -186,8 +208,8 @@
                 <!-- Card 5 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/f1c40f/ffffff?text=Drivers" class="card-img-top" alt="Driver Compatibility">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/hwinfo.svg" class="card-img-top" alt="Driver Compatibility">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Broad Driver Compatibility</h5>
                             <p class="card-text">Includes many proprietary firmware packages from the Debian non-free repository for out-of-the-box hardware support.</p>
                         </div>
@@ -196,8 +218,8 @@
                 <!-- Card 6 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/400x250/e67e22/ffffff?text=NVIDIA" class="card-img-top" alt="NVIDIA Drivers">
-                        <div class="card-body">
+                        <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/nvidia.svg" class="card-img-top" alt="NVIDIA Drivers">
+                        <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Easy NVIDIA Driver Installation</h5>
                             <p class="card-text">A simple one-click installer is included for proprietary NVIDIA drivers (requires an internet connection).</p>
                         </div>
@@ -206,7 +228,7 @@
             </div>
             <!-- Adding extra content to demonstrate scrolling -->
             <div class="p-5 my-4 bg-light rounded-3">
-                <h2>Meet the PlaceholderOS Desktop Environment (Based on Openbox)</h2>
+                <h2>Meet the Devubox-MX Desktop Environment (Based on Openbox)</h2>
                 <p>Our midweight desktop environment aims to be fast and resource-efficient, while still being attractive and user-friendly. It augments the native Openbox configuration with unique features:</p>
                 <ul>
                 <li>Placeholder: Feature 1 description goes here.</li>
@@ -219,92 +241,45 @@
     </main>
     
     <!-- ======================= Footer ======================= -->
-    <footer class="footer">
+    <footer class="footer py-3 bg-dark text-white">
         <div class="container">
-            <p>&copy; 2025 PlaceholderOS. All Rights Reserved. Licensed under MIT. Made with love in Indonesia.</p>
+            <p class="mb-0">&copy; 2025 Devubox-MX. All Rights Reserved. Licensed under MIT. Made with love in Indonesia.</p>
         </div>
     </footer>
 
 
     <!-- ======================= Scripts ======================= -->
-    <!-- Placed at the end of the body to allow the page content to load first -->
-
-    <!-- jQuery (Not required by Bootstrap 5, but included as per your request) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDiC/RI=" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap Bundle JS (includes Popper.js for tooltips, popovers, and dropdowns) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Countdown Timer Script -->
     <script>
-        // Set the date we're counting down to
         const countDownDate = new Date("Aug 30, 2025 00:00:00").getTime();
-
-        // Get the elements to update
         const countdownElement = document.getElementById("countdown-timer");
         const downloadButton = document.getElementById("download-button");
 
-        // Update the count down every hour to be less distracting
-        const x = setInterval(function() {
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
 
-            // Get today's date and time
-            const now = new Date();
-            const distance = countDownDate - now.getTime();
-
-            // If the count down is finished, show release text
             if (distance < 0) {
-                clearInterval(x);
+                if (countdownInterval) clearInterval(countdownInterval);
                 countdownElement.innerHTML = "AVAILABLE NOW!";
                 downloadButton.textContent = "Download";
                 downloadButton.classList.remove("btn-primary");
                 downloadButton.classList.add("btn-success");
-                return; // Exit the function
+                return;
             }
-            
-            // --- New logic for an estimated, less precise countdown ---
+
             const releaseDate = new Date(countDownDate);
-            
-            // Calculate the difference in months
-            let months = (releaseDate.getFullYear() - now.getFullYear()) * 12;
-            months -= now.getMonth();
+            const currentDate = new Date();
+            let months = (releaseDate.getFullYear() - currentDate.getFullYear()) * 12;
+            months -= currentDate.getMonth();
             months += releaseDate.getMonth();
-            
-            // Adjust for days
-            if (releaseDate.getDate() < now.getDate()) {
+            if (releaseDate.getDate() < currentDate.getDate()) {
                 months--;
             }
 
-            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
-
-            let output = "Approx. ";
-            if (months > 0) {
-                output += `${months} month${months > 1 ? 's' : ''}`;
-            }
-            
-            // Display the result
-            countdownElement.innerHTML = output;
-
-        }, 3600000); // Update every hour
-
-        // Run once immediately on page load
-        (function(){
-            const now = new Date();
-            const distance = countDownDate - now.getTime();
-            if (distance < 0) {
-                 clearInterval(x);
-                 countdownElement.innerHTML = "AVAILABLE NOW!";
-                 downloadButton.textContent = "Download";
-                 downloadButton.classList.remove("btn-primary");
-                 downloadButton.classList.add("btn-success");
-                 return;
-            }
-            const releaseDate = new Date(countDownDate);
-            let months = (releaseDate.getFullYear() - now.getFullYear()) * 12;
-            months -= now.getMonth();
-            months += releaseDate.getMonth();
-            if (releaseDate.getDate() < now.getDate()) {
-                months--;
-            }
             let output = "Approx. ";
             if (months > 0) {
                 output += `${months} month${months > 1 ? 's' : ''}`;
@@ -313,7 +288,49 @@
                  output += `${days} day${days > 1 ? 's' : ''}`;
             }
             countdownElement.innerHTML = output;
-        })();
+        };
+        
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 3600000);
+    </script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        (() => {
+            'use strict'
+
+            const getStoredTheme = () => localStorage.getItem('theme')
+            const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+            const getPreferredTheme = () => {
+                const storedTheme = getStoredTheme()
+                if (storedTheme) {
+                    return storedTheme
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+            }
+
+            const setTheme = theme => {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+
+            setTheme(getPreferredTheme())
+
+            const themeToggleButton = document.getElementById('theme-toggle-btn');
+
+            themeToggleButton.addEventListener('click', () => {
+                const currentTheme = getStoredTheme() || getPreferredTheme();
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                setStoredTheme(newTheme);
+                setTheme(newTheme);
+            });
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (!getStoredTheme()) {
+                    setTheme(getPreferredTheme())
+                }
+            })
+        })()
     </script>
 
 </body>
