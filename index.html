@@ -69,13 +69,22 @@
         
         #countdown-timer { color: var(--text-light); }
         
-        .hero-image-container { perspective: 1000px; }
         .hero-image-3d {
-            transform: rotateY(-20deg) rotateX(0deg);
             transition: transform 0.5s ease;
         }
-        .hero-image-3d:hover { transform: rotateY(0) rotateX(0); }
 
+        /* Apply 3D effect only on large screens */
+        @media (min-width: 992px) {
+            .hero-image-container {
+                perspective: 1000px;
+            }
+            .hero-image-3d {
+                transform: rotateY(-20deg) rotateX(0deg);
+            }
+            .hero-image-3d:hover {
+                transform: rotateY(0) rotateX(0);
+            }
+        }
         /* Dark Mode Styles */
         [data-bs-theme="dark"] body {
             background: var(--body-bg-dark);
@@ -143,7 +152,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Hero Section -->
-            <div class="p-5 mb-4 rounded-3 hero-section">
+            <div class="p-3 p-lg-5 mb-4 rounded-3 hero-section">
                 <div class="container-fluid">
                    <div class="row align-items-center">
                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
