@@ -44,13 +44,11 @@
             --card-bg-dark: rgba(33, 37, 41, 0.8);
             --text-light: #212529;
             --text-dark: #f8f9fa;
-            --border-color-light: rgba(0, 0, 0, 0.175);
-            --border-color-dark: rgba(255, 255, 255, 0.175);
+            --border-color-light: #dee2e6;
+            --border-color-dark: #495057;
         }
 
-        html {
-            scroll-behavior: smooth; /* Enables smooth scrolling */
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: var(--body-bg-light);
@@ -112,12 +110,8 @@
         }
 
         /* Theme toggle icon styling */
-        .theme-toggle {
-            cursor: pointer;
-        }
-        .theme-toggle .sun-icon, .theme-toggle .moon-icon {
-            transition: transform 0.3s ease;
-        }
+        .theme-toggle { cursor: pointer; }
+        .theme-toggle .sun-icon, .theme-toggle .moon-icon { transition: transform 0.3s ease; }
         [data-bs-theme="dark"] .sun-icon { display: inline-block; }
         [data-bs-theme="dark"] .moon-icon { display: none; }
         [data-bs-theme="light"] .sun-icon { display: none; }
