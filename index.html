@@ -40,18 +40,18 @@
         :root {
             --body-bg-light: linear-gradient(to right, #e2e2e2, #c9d6ff);
             --body-bg-dark: linear-gradient(to right, #232526, #414345);
-            --hero-bg-light: rgba(255, 255, 255, 0.8);
-            --hero-bg-dark: rgba(33, 37, 41, 0.8);
+            --card-bg-light: rgba(255, 255, 255, 0.8);
+            --card-bg-dark: rgba(33, 37, 41, 0.8);
             --text-light: #212529;
             --text-dark: #f8f9fa;
-            --section-bg-light: #f8f9fa;
-            --section-bg-dark: #212529;
+            --border-color-light: rgba(0, 0, 0, 0.175);
+            --border-color-dark: rgba(255, 255, 255, 0.175);
         }
-        
+
         html {
             scroll-behavior: smooth; /* Enables smooth scrolling */
         }
-        
+
         body {
             background: var(--body-bg-light);
             font-family: 'Inter', sans-serif;
@@ -60,10 +60,11 @@
         .main-content { padding-top: 3rem; padding-bottom: 3rem; }
         .footer { background-color: #343a40; color: white; padding: 1.5rem 0; text-align: center; }
         
-        .hero-section {
-            background-color: var(--hero-bg-light);
+        .custom-card {
+            background-color: var(--card-bg-light);
             backdrop-filter: blur(10px);
             transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--border-color-light);
         }
         
         .card-img-top {
@@ -97,6 +98,10 @@
         [data-bs-theme="dark"] .hero-section {
             background-color: var(--hero-bg-dark);
             color: var(--text-dark);
+        }
+        [data-bs-theme="dark"] .custom-card {
+            background-color: var(--card-bg-dark);
+            border-color: var(--border-color-dark);
         }
         [data-bs-theme="dark"] #countdown-timer,
         [data-bs-theme="dark"] .text-muted {
@@ -157,7 +162,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Hero Section -->
-            <div class="p-3 p-lg-5 mb-4 rounded-3 hero-section">
+            <div class="card custom-card shadow-sm p-3 p-lg-5 mb-4">
                 <div class="container-fluid">
                    <div class="row align-items-center">
                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
@@ -166,7 +171,7 @@
                        <div class="col-lg-6 order-lg-1">
                            <h1 class="display-6 fw-bold">Introducing Devubox-MX</h1>
                            <p class="fs-6 text-muted">A midweight, simple, and stable systemd-free desktop OS.</p>
-                           <p class="fs-">Devubox-MX is an open-source MX Linux respin based on Devuan It uses both MX Linux and Devuan-Backports repositories to provide access to the latest/backports of programs and drivers, similar to how PPAs function in Ubuntu. It features a customized Openbox window manager that provides a complete desktop environment inspired by CrunchBang++, BunsenLabs, Mabox, and Archcraft.</p>
+                           <p class="fs-5">Devubox-MX is an open-source MX Linux respin based on Devuan It uses both MX Linux and Devuan-Backports repositories to provide access to the latest/backports of programs and drivers, similar to how PPAs function in Ubuntu. It features a customized Openbox window manager that provides a complete desktop environment inspired by CrunchBang++, BunsenLabs, Mabox, and Archcraft.</p>
                            <p class="fs-5"><strong>Disclaimer:</strong> Since this distribution is in an early alpha phase, we do not recommend installing it on your main hardware. For stability, please test it in a virtual machine (VM) unless you are a tech-savvy user comfortable with pre-release software.</p>
                            <div class="mt-4">
                                <p class="fs-5 mb-2">Estimated alpha release: August 30, 2025. This date is subject to change.</p>
@@ -181,7 +186,7 @@
             <div class="row text-center">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/gnome-usage.svg" class="card-img-top" alt="Midweight OS">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Midweight & Fast</h5>
@@ -191,7 +196,7 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/github.svg" class="card-img-top" alt="Community Driven">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Community Driven</h5>
@@ -201,7 +206,7 @@
                 </div>
                 <!-- Card 3 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/gufw.svg" class="card-img-top" alt="Secure OS">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Secure & Reliable</h5>
@@ -211,7 +216,7 @@
                 </div>
                 <!-- Card 4 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/knemo.svg" class="card-img-top" alt="Preloaded Apps">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Preloaded with Apps for Offline Use</h5>
@@ -221,7 +226,7 @@
                 </div>
                 <!-- Card 5 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/hwinfo.svg" class="card-img-top" alt="Driver Compatibility">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Broad Driver Compatibility</h5>
@@ -231,7 +236,7 @@
                 </div>
                 <!-- Card 6 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card custom-card h-100 shadow-sm">
                         <img src="https://raw.githubusercontent.com/vinceliuice/Fluent-icon-theme/refs/heads/master/src/scalable/apps/nvidia.svg" class="card-img-top" alt="NVIDIA Drivers">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Easy NVIDIA Driver Installation</h5>
@@ -241,7 +246,7 @@
                 </div>
             </div>
             <!-- Adding extra content to demonstrate scrolling -->
-            <div class="p-5 my-4 bg-light rounded-3" id="features-section">
+            <div class="card custom-card shadow-sm p-5 my-4" id="features-section">
                  <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
                         <img src="https://placehold.co/600x400/55595c/ffffff?text=Devubox+DE" class="img-fluid rounded shadow" alt="Devubox-MX Desktop Environment Placeholder">
@@ -269,7 +274,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-5 my-4 bg-light rounded-3">
+            <div class="card custom-card shadow-sm p-5 my-4">
                 <h2>Applications in Devubox-MX</h2>
                 <p>Most applications needed for everyday use are already included in Devubox-MX:</p>
                 
