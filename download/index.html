@@ -162,7 +162,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h1 class="display-5 fw-bold">Download Devubox-MX</h1>
-                <p class="lead text-muted">Get the latest alpha release and check system requirements.</p>
+                <p class="lead text-muted">Get the latest beta1 release and check system requirements.</p>
             </div>
 
             <!-- Download Section -->
@@ -173,7 +173,7 @@
                             <h2 class="card-title">Devubox-MX25 Base_sysvinit beta1 x64</h2>
                             <p class="text-muted">Release Date: November 20, 2025 (Estimated)</p>
                             <div class="alert alert-warning" role="alert">
-                                <p class="mb-0"><strong>Disclaimer:</strong> This is an early alpha release. We recommend testing in a virtual machine.</p>
+                                <p class="mb-0"><strong>Disclaimer:</strong> This is an early beta release. We recommend testing in a virtual machine.</p>
                                 <hr>
                                 <p class="mb-0"><strong>Note:</strong> You can change the language (such as keyboard layout, locale, and browser), but some elements will remain in English (this is not planned to change).</p>
                             </div>
@@ -198,10 +198,10 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Processor</strong><span>1 gigahertz (GHz) or faster, 1 or more cores</span></li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Memory</strong><span>1GB Minimum* (With Swap/Zram) / 2GB+ Recommended</span></li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Storage</strong><span>14GB HDD Minimum / 40GB+ HDD or SSD Recommended</span></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Storage</strong><span>14GB HDD Minimum / 20GB+ HDD or SSD Recommended</span></li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>System Firmware</strong><span>Legacy BIOS or UEFI (Non Secure Boot)</span></li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>TPM</strong><span class="badge bg-success">NO TPM REQUIRED!</span></li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Graphics Card</strong><span>Integrated or Dedicated GPU with 3D Acceleration and 128MB+ VRAM</span></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Graphics Card</strong><span>Integrated or Discrete GPU with 3D acceleration (128 MB+ VRAM)</span></li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Display</strong><span>1024x768 VGA Minimum / 1366x768+ Recommended</span></li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><strong>Internet Connection</strong><span>Not Required for installation</span></li>
                             </ul>
@@ -215,16 +215,22 @@
                         <div class="card-body p-4">
                             <h2 class="fw-bold text-center mb-4">Verify Your Download</h2>
                             <h5 class="card-title">How to verify checksum of the ISO</h5>
-                            <p>To check the integrity of the downloaded ISO in Linux, download the ISO and then use the appropriate action below.</p>
+                            <p>To check the integrity of the downloaded ISO, use one of the methods below depending on your operating system.</p>
                             <div class="p-3 mb-3 rounded checksum-box">
                                 <p class="mb-1"><strong>File:</strong> <code>Devubox-MX25_Base_sysvinit_beta1_x64.iso</code></p>
-                                <p class="mb-1"><strong>md5sum:</strong> <code class="text-break">a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6</code></p>
-                                <p class="mb-0"><strong>sha256sum:</strong> <code class="text-break">a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7b8c9d0e1f2</code></p>
+                                <p class="mb-1"><strong>md5sum:</strong> <code class="text-break">d41d8cd98f00b204e9800998ecf8427e</code></p>
+                                <p class="mb-0"><strong>sha256sum:</strong> <code class="text-break">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></p>
                             </div>
+                            <p>Linux</p>
                             <p class="mb-1"><strong>MD5 Check:</strong></p>
                             <pre class="p-2 rounded"><code>md5sum Devubox-MX25_Base_sysvinit_beta1_x64.iso</code></pre>
                             <p class="mb-1 mt-3"><strong>SHA256 Check:</strong></p>
                             <pre class="p-2 rounded"><code>sha256sum Devubox-MX25_Base_sysvinit_beta1_x64.iso</code></pre>
+                            <p>Windows</p>
+                            <p class="mb-1"><strong>MD5 Check:</strong></p>
+                            <pre class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_beta1_x64.iso MD5</code></pre>
+                            <p class="mb-1 mt-3"><strong>SHA256 Check:</strong></p>
+                            <pre class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_beta1_x64.iso SHA256</code></pre>
                         </div>
                     </div>
                 </div>
