@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <!-- Required meta tags for character set and responsive design -->
     <meta charset="UTF-8">
@@ -7,18 +8,20 @@
 
     <!-- SEO Meta Tags -->
     <title>Devubox-MX - Midweight Simple Stable Desktop OS</title>
-    <meta name="description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="description"
+        content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
     <meta name="keywords" content="Linux, Devubox-MX, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
     <meta name="author" content="Devubox-MX Team">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="5NSUj4iUm8mQVvVLfs-nzIvBGkmw6tJR6EQUsfkQQM0" />
     <link rel="canonical" href="https://devuboxlinux.github.io/">
-    <link rel='shortlink' href="https://devuboxlinux.github.io/"/>
+    <link rel='shortlink' href="https://devuboxlinux.github.io/" />
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devuboxlinux.github.io/">
     <meta property="og:title" content="Devubox-MX - Midweight Simple Stable Desktop OS">
-    <meta property="og:description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta property="og:description"
+        content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
     <meta property="og:image" content="https://placehold.co/1200x630/55595c/ffffff?text=Devubox-MX">
     <meta property="og:site_name" content="Devubox-MX">
 
@@ -26,7 +29,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://devuboxlinux.github.io/">
     <meta name="twitter:title" content="Devubox-MX - Midweight Simple Stable Desktop OS">
-    <meta name="twitter:description" content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="twitter:description"
+        content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
     <meta name="twitter:image" content="https://placehold.co/1200x630/55595c/ffffff?text=Devubox-MX">
 
     <!-- Favicon -->
@@ -35,7 +39,7 @@
     <!-- Bootstrap CSS from CDN -->
     <!-- This link fetches the latest Bootstrap 5 styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -52,30 +56,47 @@
             --border-color-dark: rgba(255, 255, 255, 0.175);
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background: var(--body-bg-light);
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s ease;
         }
-        .main-content { padding-top: 3rem; padding-bottom: 3rem; }
-        .footer { background-color: #343a40; color: white; padding: 1.5rem 0; text-align: center; }
-        
+
+        .main-content {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
         .custom-card {
             background-color: var(--card-bg-light);
             backdrop-filter: blur(10px);
             transition: background-color 0.3s ease, color 0.3s ease;
             border: 1px solid var(--border-color-light);
         }
-        
+
         .card-img-top {
-            height: 200px; width: 200px; object-fit: cover;
-            margin: 1rem auto; border-radius: 15px;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            margin: 1rem auto;
+            border-radius: 15px;
         }
-        
-        #countdown-timer { color: var(--text-light); }
-        
+
+        #countdown-timer {
+            color: var(--text-light);
+        }
+
         .hero-image-3d {
             transition: transform 0.5s ease;
         }
@@ -85,9 +106,11 @@
             .hero-image-container {
                 perspective: 1000px;
             }
+
             .hero-image-3d {
                 transform: rotateY(-20deg) rotateX(0deg);
             }
+
             .hero-image-3d:hover {
                 transform: rotateY(0) rotateX(0);
             }
@@ -97,29 +120,51 @@
         [data-bs-theme="dark"] body {
             background: var(--body-bg-dark);
         }
+
         [data-bs-theme="dark"] .hero-section {
             background-color: var(--hero-bg-dark);
             color: var(--text-dark);
         }
+
         [data-bs-theme="dark"] .custom-card {
             background-color: var(--card-bg-dark);
             border-color: var(--border-color-dark);
         }
+
         [data-bs-theme="dark"] #countdown-timer,
         [data-bs-theme="dark"] .text-muted {
             color: #adb5bd !important;
         }
+
         [data-bs-theme="dark"] .bg-light {
             background-color: var(--section-bg-dark) !important;
         }
 
         /* Theme toggle icon styling */
-        .theme-toggle { cursor: pointer; }
-        .theme-toggle .sun-icon, .theme-toggle .moon-icon { transition: transform 0.3s ease; }
-        [data-bs-theme="dark"] .sun-icon { display: inline-block; }
-        [data-bs-theme="dark"] .moon-icon { display: none; }
-        [data-bs-theme="light"] .sun-icon { display: none; }
-        [data-bs-theme="light"] .moon-icon { display: inline-block; }
+        .theme-toggle {
+            cursor: pointer;
+        }
+
+        .theme-toggle .sun-icon,
+        .theme-toggle .moon-icon {
+            transition: transform 0.3s ease;
+        }
+
+        [data-bs-theme="dark"] .sun-icon {
+            display: inline-block;
+        }
+
+        [data-bs-theme="dark"] .moon-icon {
+            display: none;
+        }
+
+        [data-bs-theme="light"] .sun-icon {
+            display: none;
+        }
+
+        [data-bs-theme="light"] .moon-icon {
+            display: inline-block;
+        }
     </style>
 
     <!-- Google Fonts -->
@@ -128,13 +173,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
     <!-- ======================= Navbar ======================= -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#">Devubox-MX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -142,9 +189,12 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features-section">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="download">Download</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/wiki/Install-Guide">Install Guide</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/discussions">Forum</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/">Source Code</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://github.com/DevuboxLinux/Devubox-MX/wiki/Install-Guide">Install Guide</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://github.com/DevuboxLinux/Devubox-MX/discussions">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/">Source
+                            Code</a></li>
                     <li class="nav-item ms-lg-2">
                         <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme">
                             <!-- Replaced SVG with Bootstrap Icons -->
@@ -163,23 +213,36 @@
             <!-- Hero Section -->
             <div class="card custom-card shadow-sm p-3 p-lg-5 mb-4">
                 <div class="container-fluid">
-                   <div class="row align-items-center">
-                       <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
-                           <img src="Screenshot.png" class="img-fluid rounded shadow hero-image-3d" alt="A screenshot of the Devubox-MX desktop, featuring a clean and modern interface with the Openbox window manager, a customized Tint2 panel, and various applications open.">
-                       </div>
-                       <div class="col-lg-6 order-lg-1">
-                           <h1 class="display-6 fw-bold">Introducing Devubox-MX</h1>
-                           <p class="fs-6 text-muted">A midweight, simple, and stable systemd-free desktop OS.</p>
-                           <p class="fs-5">Devubox-MX is an open-source MX Linux respin based on Devuan. It uses both MX Linux and MX AHS repositories to provide access to the latest/backports of programs and drivers, similar to how PPAs function in Ubuntu. It features a customized Openbox window manager that provides a complete desktop environment inspired by CrunchBang++, BunsenLabs, Mabox, and Archcraft.</p>
-                           <p class="fs-5"><strong>Disclaimer:</strong> Since this distribution is in an early alpha phase, we do not recommend installing it on your main hardware. For stability, please test it in a virtual machine (VM) unless you are a tech-savvy user comfortable with pre-release software.</p>
-                           <div class="mt-4">
-                               <p class="fs-5 mb-2">RC1 is now coming out🎉🎉🎉. Stable release is coming in December with the new Plus and Lite variant.</p>
-                               <p class="fs-5 mb-2">Estimated Stable release: December 2025. This date is subject to change.</p>
-                               <a href="/download" id="download-button" class="btn btn-primary btn-lg" role="button">Download</a>
-                               <a href="#features-section" class="btn btn-secondary btn-lg" role="button">Learn More</a>
-                           </div>
-                       </div>
-                   </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
+                            <img src="Screenshot.png" class="img-fluid rounded shadow hero-image-3d"
+                                alt="A screenshot of the Devubox-MX desktop, featuring a clean and modern interface with the Openbox window manager, a customized Tint2 panel, and various applications open.">
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <h1 class="display-6 fw-bold">Introducing Devubox-MX</h1>
+                            <p class="fs-6 text-muted">A midweight, simple, and stable systemd-free desktop OS.</p>
+                            <p class="fs-5">Devubox-MX is an open-source MX Linux respin based on Devuan. It uses both
+                                MX Linux and MX AHS repositories to provide access to the latest/backports of programs
+                                and drivers, similar to how PPAs function in Ubuntu. It features a customized Openbox
+                                window manager that provides a complete desktop environment inspired by CrunchBang++,
+                                BunsenLabs, Mabox, and Archcraft.</p>
+                            <p class="fs-5"><strong>Disclaimer:</strong> ExampleOS is currently in the RC1 phase. It’s
+                                generally safe to install on real hardware, but you will need to reinstall once the
+                                stable release is available. For the best experience and stability, especially if you’re
+                                not familiar with pre-release software, we still recommend testing in a virtual machine
+                                (VM). Tech-savvy users may proceed on bare metal at their own discretion.</p>
+                            <div class="mt-4">
+                                <p class="fs-5 mb-2">RC1 is now coming out🎉🎉🎉. Stable release is coming in December
+                                    with the new Plus and Lite variant.</p>
+                                <p class="fs-5 mb-2">Estimated Stable release: December 2025. This date is subject to
+                                    change.</p>
+                                <a href="/download" id="download-button" class="btn btn-primary btn-lg"
+                                    role="button">Download</a>
+                                <a href="#features-section" class="btn btn-secondary btn-lg" role="button">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Responsive Grid System with Linux-related content -->
@@ -187,105 +250,133 @@
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/hardinfo2.svg" class="card-img-top" alt="Midweight OS">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/hardinfo2.svg"
+                            class="card-img-top" alt="Midweight OS">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Midweight & Fast</h5>
-                            <p class="card-text">Built with a customized Openbox window manager, Devubox-MX is designed to be fast and efficient. It runs smoothly on older 64-bit hardware (like the Core 2 Duo) and uses only ~600MB of RAM, similar to XFCE.</p>
+                            <p class="card-text">Built with a customized Openbox window manager, Devubox-MX is designed
+                                to be fast and efficient. It runs smoothly on older 64-bit hardware (like the Core 2
+                                Duo) and uses only ~600MB of RAM, similar to XFCE.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/github.svg" class="card-img-top" alt="Community Driven">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/github.svg"
+                            class="card-img-top" alt="Community Driven">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Community Driven</h5>
-                            <p class="card-text">As an open-source project, our development is guided by user feedback. Join our forums to help shape the future of Devubox-MX.</p>
+                            <p class="card-text">As an open-source project, our development is guided by user feedback.
+                                Join our forums to help shape the future of Devubox-MX.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/security-high.svg" class="card-img-top" alt="Secure OS">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/security-high.svg"
+                            class="card-img-top" alt="Secure OS">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Secure & Reliable</h5>
-                            <p class="card-text">Based on the solid foundation of Devuan and MX Linux, Devubox-MX benefits from robust security features and a stable, reliable core system.</p>
+                            <p class="card-text">Based on the solid foundation of Devuan and MX Linux, Devubox-MX
+                                benefits from robust security features and a stable, reliable core system.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/knemo.svg" class="card-img-top" alt="Preloaded Apps">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/knemo.svg"
+                            class="card-img-top" alt="Preloaded Apps">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Preloaded with Apps for Offline Use</h5>
-                            <p class="card-text">It's ready out of the box with multimedia codecs, games, LibreOffice, printer support, and top apps like GIMP, Inkscape, and OBS Studio.</p>
+                            <p class="card-text">It's ready out of the box with multimedia codecs, games, LibreOffice,
+                                printer support, and top apps like GIMP, Inkscape, and OBS Studio.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 5 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/jockey.svg" class="card-img-top" alt="Driver Compatibility">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/jockey.svg"
+                            class="card-img-top" alt="Driver Compatibility">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Broad Driver Compatibility</h5>
-                            <p class="card-text">Includes many proprietary firmware packages from the Debian `non-free-firmware` repository for out-of-the-box hardware support. With Advanced Hardware Support (AHS), it also supports a wide range of modern hardware.</p>
+                            <p class="card-text">Includes many proprietary firmware packages from the Debian
+                                `non-free-firmware` repository for out-of-the-box hardware support. With Advanced
+                                Hardware Support (AHS), it also supports a wide range of modern hardware.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card custom-card h-100 shadow-sm">
-                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/nvidia.svg" class="card-img-top" alt="NVIDIA Drivers">
+                        <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/nvidia.svg"
+                            class="card-img-top" alt="NVIDIA Drivers">
                         <div class="card-body px-4 pb-4">
                             <h5 class="card-title">Easy NVIDIA Driver Installation</h5>
-                            <p class="card-text">A simple one-click installer is included for proprietary NVIDIA drivers (requires an internet connection).</p>
+                            <p class="card-text">A simple one-click installer is included for proprietary NVIDIA drivers
+                                (requires an internet connection).</p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Adding extra content to demonstrate scrolling -->
             <div class="card custom-card shadow-sm p-5 p-lg-5 mb-4" id="features-section">
-                 <div class="row align-items-center">
+                <div class="row align-items-center">
                     <h2>More about Devubox-MX</h2>
-                    <p>The Devubox-MX combines the Openbox experience with XFCE components to create a modern look. Ready to serve both power users and beginners alike, it is midweight, fast, and resource-efficient, yet 100% powerful.</p>
-                    <p>Built with user experience in mind, we've selected components to provide a midweight system that just works. Here are some of the key features of Devubox-MX:</p>
+                    <p>The Devubox-MX combines the Openbox experience with XFCE components to create a modern look.
+                        Ready to serve both power users and beginners alike, it is midweight, fast, and
+                        resource-efficient, yet 100% powerful.</p>
+                    <p>Built with user experience in mind, we've selected components to provide a midweight system that
+                        just works. Here are some of the key features of Devubox-MX:</p>
                     <ul>
-                        <li>Comes with lots of pre-installed applications, plus many more available through the MX Package Installer and MX Repositories using the Synaptic Package Manager.</li>
-                        <li>Includes Rescue Tools and MX Tools from MX Linux to help repair unbootable systems and make maintenance easier.</li>
+                        <li>Comes with lots of pre-installed applications, plus many more available through the MX
+                            Package Installer and MX Repositories using the Synaptic Package Manager.</li>
+                        <li>Includes Rescue Tools and MX Tools from MX Linux to help repair unbootable systems and make
+                            maintenance easier.</li>
                         <li>Includes both light and dark themes for better visual comfort.</li>
                         <li>Supports installation on UEFI and Legacy BIOS systems.</li>
                         <li>Provides Advanced Hardware Support (AHS) for better compatibility with modern hardware.</li>
                         <li>Includes proprietary firmware packages for out-of-the-box hardware support.</li>
                         <li>Includes multimedia codecs for playing various audio and video formats out of the box.</li>
                         <li>Offers a one-click installer for proprietary NVIDIA drivers.</li>
-                        <li>The Tint2 panel has been customized with enhanced functionality, featuring an application menu, search tool, multitasking view (Exposé), software center, and buttons for logout and show desktop.</li>
+                        <li>The Tint2 panel has been customized with enhanced functionality, featuring an application
+                            menu, search tool, multitasking view (Exposé), software center, and buttons for logout and
+                            show desktop.</li>
                         <li>Added custom fonts from Devubox-MX for desktop customization.</li>
-                        <li>The LibreOffice configuration is tweaked for a look and feel similar to Microsoft Office.</li>
+                        <li>The LibreOffice configuration is tweaked for a look and feel similar to Microsoft Office.
+                        </li>
                         <li>Easy window tiling using keyboard shortcuts.</li>
                     </ul>
                     <p>It supports a wide range of hardware, from older 64-bit laptops to modern desktops.</p>
                     <h2>Devubox-MX is Built On:</h2>
                     <ul>
-                        <li><strong>Base System:</strong> Devuan 6 "Excalibur" (Based on Debian 13.2 "Trixie" without systemd)</li>
+                        <li><strong>Base System:</strong> Devuan 6 "Excalibur" (Based on Debian 13.2 "Trixie" without
+                            systemd)</li>
                         <li><strong>Repositories:</strong> MX Linux 25 Repository</li>
-                        <li><strong>Desktop Components:</strong> Openbox 3.6.1, Tint2 17.0.1, XFCE 4.20.1, and Picom 12.5</li>
-                        <li><strong>Build Tools:</strong> Built using the build-iso-devubox script and antiX live system tools</li>
+                        <li><strong>Desktop Components:</strong> Openbox 3.6.1, Tint2 17.0.1, XFCE 4.20.1, and Picom
+                            12.5</li>
+                        <li><strong>Build Tools:</strong> Built using the build-iso-devubox script and antiX live system
+                            tools</li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <!-- ======================= Footer ======================= -->
     <footer class="footer py-3 bg-dark text-white">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Devubox-MX. All Rights Reserved. Licensed under MIT. Made with love in Indonesia 🇮🇩.</p>
+            <p class="mb-0">&copy; 2025 Devubox-MX. All Rights Reserved. Licensed under MIT. Made with love in Indonesia
+                🇮🇩.</p>
             <div class="mt-2">
-                <a href="https://github.com/DevuboxLinux" class="text-white me-3" aria-label="GitHub"><i class="bi bi-github" style="font-size: 1.5rem;"></i></a>
-               <!-- Added Sourceforge Icon -->
-                <a href="https://sourceforge.net/projects/devubox-mx-edition/" class="text-white me-3" aria-label="Sourceforge"><i class="bi bi-sourceforge" style="font-size: 1.5rem;"></i></a>
+                <a href="https://github.com/DevuboxLinux" class="text-white me-3" aria-label="GitHub"><i
+                        class="bi bi-github" style="font-size: 1.5rem;"></i></a>
+                <!-- Added Sourceforge Icon -->
+                <a href="https://sourceforge.net/projects/devubox-mx-edition/" class="text-white me-3"
+                    aria-label="Sourceforge"><i class="bi bi-sourceforge" style="font-size: 1.5rem;"></i></a>
             </div>
         </div>
     </footer>
@@ -327,12 +418,12 @@
             if (months > 0) {
                 output += `${months} month${months > 1 ? 's' : ''}`;
             } else {
-                 const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
-                 output += `${days} day${days > 1 ? 's' : ''}`;
+                const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
+                output += `${days} day${days > 1 ? 's' : ''}`;
             }
             countdownElement.innerHTML = output;
         };
-        
+
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 3600000);
     </script>
@@ -377,4 +468,5 @@
     </script>
 
 </body>
+
 </html>
