@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Devubox-MX | The Future of Midweight Computing</title>
+    <meta name="description"
+        content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
+    <meta name="keywords" content="Linux, Devubox-MX, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
+    <meta name="author" content="Devubox-MX Team">
+
+    <!-- Fonts: JetBrains Mono for that 'Terminal' feel, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        devu: {
+                            dark: '#0f172a',
+                            accent: '#38bdf8', /* Cyan-400 */
+                            purple: '#a855f7', /* Purple-500 */
+                            glass: 'rgba(15, 23, 42, 0.7)',
+                            glassBorder: 'rgba(255, 255, 255, 0.1)',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(56, 189, 248, 0.5)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 10px rgba(56, 189, 248, 0.2)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        body {
+            background-color: #020617;
+            /* Slate 950 */
+            background-image:
+                radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* 3D Card Effect */
+        .perspective-container {
+            perspective: 1000px;
+        }
+
+        .tilt-card {
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-devu-accent selection:text-devu-dark">
+
+    <!-- Background Grid Decoration -->
+    <div class="fixed inset-0 z-[-1] opacity-20 pointer-events-none" style="background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); 
+         background-size: 40px 40px;">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-gradient-to-br from-devu-purple to-devu-accent flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <i data-lucide="box" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span
+                        class="font-mono font-bold text-xl tracking-tighter text-white group-hover:text-devu-accent transition-colors">Devubox<span
+                            class="text-devu-accent">-MX</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="font-mono text-sm hover:text-devu-accent transition-colors">~/Home</a>
+                    <a href="#features"
+                        class="font-mono text-sm hover:text-devu-accent transition-colors">./Features</a>
+                    <a href="https://github.com/DevuboxLinux/Devubox-MX/wiki/Install-Guide"
+                        class="font-mono text-sm hover:text-devu-accent transition-colors">./Docs</a>
+                    <a href="download.html"
+                        class="px-5 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-devu-accent hover:text-devu-dark hover:border-devu-accent transition-all font-mono text-sm font-bold flex items-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i> Download
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-white/5">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#"
+                    class="block px-3 py-3 rounded-md text-base font-mono hover:bg-white/5 hover:text-devu-accent">Home</a>
+                <a href="#features"
+                    class="block px-3 py-3 rounded-md text-base font-mono hover:bg-white/5 hover:text-devu-accent">Features</a>
+                <a href="download.html"
+                    class="block px-3 py-3 rounded-md text-base font-mono bg-devu-accent/10 text-devu-accent border border-devu-accent/20">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="pt-32 pb-16 lg:pt-48 lg:pb-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                <!-- Text Content -->
+                <div class="space-y-8 order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-devu-purple/30 bg-devu-purple/10 text-devu-purple text-xs font-mono font-bold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-devu-purple animate-pulse"></span>
+                        Systemd-Free Architecture
+                    </div>
+
+                    <h1 class="text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
+                        Simple.<br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-devu-accent to-devu-purple text-glow">Stable.</span><br>
+                        Yours.
+                    </h1>
+
+                    <p class="text-lg text-gray-400 leading-relaxed max-w-lg border-l-2 border-devu-accent/30 pl-6">
+                        Devubox-MX is a midweight OS forge based on Devuan & MX Linux.
+                        Experience the raw speed of Openbox with the reliability of Debian.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="download.html"
+                            class="group relative px-8 py-4 bg-devu-accent text-devu-dark font-mono font-bold rounded-lg overflow-hidden shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all">
+                            <div
+                                class="absolute inset-0 w-full h-full bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4">
+                            </div>
+                            <span class="relative flex items-center gap-2">
+                                Initiate Download <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+                        <a href="#features"
+                            class="px-8 py-4 rounded-lg border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all font-mono text-gray-300 flex items-center justify-center gap-2">
+                            <i data-lucide="terminal" class="w-4 h-4"></i> System Specs
+                        </a>
+                    </div>
+
+                    <div class="pt-8 flex items-center gap-2 text-sm text-gray-500 font-mono">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        <span>RC1 Available Now • Stable Release: <span class="text-devu-accent"
+                                id="countdown-simple">Dec 2025</span></span>
+                    </div>
+                </div>
+
+                <!-- Hero Image / 3D Effect -->
+                <div class="order-1 lg:order-2 perspective-container relative">
+                    <!-- Glow Effect behind image -->
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-devu-accent to-devu-purple opacity-20 blur-2xl rounded-full animate-pulse">
+                    </div>
+
+                    <div id="hero-card"
+                        class="tilt-card relative z-10 bg-gray-900 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <!-- Fake Window Header -->
+                        <div
+                            class="bg-gray-800/80 backdrop-blur px-4 py-3 flex items-center gap-2 border-b border-white/5">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <div class="ml-4 text-xs font-mono text-gray-400">user@devubox:~</div>
+                        </div>
+                        <!-- Screenshot -->
+                        <img src="Screenshot.png"
+                            onerror="this.src='https://placehold.co/800x500/1e293b/cbd5e1?text=Devubox+Desktop+Preview'"
+                            class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
+                            alt="Devubox Screenshot">
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute bottom-6 right-6 glass-panel px-4 py-2 rounded-lg border border-devu-accent/20 flex items-center gap-3 shadow-lg animate-float">
+                            <i data-lucide="cpu" class="text-devu-accent"></i>
+                            <div class="text-xs font-mono">
+                                <div class="text-gray-400">RAM Usage</div>
+                                <div class="text-devu-accent font-bold">~600MB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Statistics / Info Strip -->
+    <div class="border-y border-white/5 bg-black/20 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <div class="text-2xl font-bold font-mono text-white">Devuan 6</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider">Base System</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-2xl font-bold font-mono text-white">Openbox</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider">Window Manager</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-2xl font-bold font-mono text-white">MX 25</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider">Repositories</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-2xl font-bold font-mono text-white">No Systemd</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider">Init System</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-mono">System Modules</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Engineered for performance. Designed for simplicity. Built
+                    for you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Feature Card 1 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="zap" class="w-24 h-24 text-devu-accent"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-devu-accent/10 flex items-center justify-center mb-6 text-devu-accent">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Midweight & Fast</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Optimized Openbox environment running on ~600MB RAM. Breaths new life into older hardware like
+                        Core 2 Duo machines.
+                    </p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="shield-check" class="w-24 h-24 text-green-400"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-6 text-green-400">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Secure Core</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Built on the rock-solid foundation of Devuan and MX Linux. Enjoy Debian stability without the
+                        systemd complexity.
+                    </p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="package" class="w-24 h-24 text-devu-purple"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-devu-purple/10 flex items-center justify-center mb-6 text-devu-purple">
+                        <i data-lucide="package" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Preloaded Arsenal</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Ready out-of-the-box with LibreOffice, GIMP, OBS Studio, and multimedia codecs. No post-install
+                        hunting required.
+                    </p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="layers" class="w-24 h-24 text-orange-400"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-6 text-orange-400">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Broad Compatibility</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Includes non-free firmware and Advanced Hardware Support (AHS) kernels. Works on both modern
+                        rigs and legacy laptops.
+                    </p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="users" class="w-24 h-24 text-pink-400"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 text-pink-400">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">Community Driven</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        An open-source project shaped by user feedback. Join the GitHub discussions and help forge the
+                        future.
+                    </p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div
+                    class="group glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="monitor" class="w-24 h-24 text-blue-400"></i>
+                    </div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-6 text-blue-400">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-mono">NVIDIA Ready</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Includes a simple one-click installer for proprietary NVIDIA drivers. Gaming and productivity
+                        ready.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CLI/Terminal Section -->
+    <section class="py-16 bg-black/40 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-[#0d1117] rounded-lg border border-gray-800 shadow-2xl overflow-hidden font-mono text-sm">
+                <!-- Terminal Header -->
+                <div class="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-gray-800">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-gray-500">neofetch</div>
+                    <div class="w-10"></div>
+                </div>
+                <!-- Terminal Body -->
+                <div class="p-6 text-gray-300 overflow-x-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="hidden md:flex items-center justify-center text-devu-purple select-none">
+                            <pre class="leading-none">
+      _.--""--._
+    ."          ".
+   |              |
+   |   DEVUBOX    |
+   |      MX      |
+   |              |
+    ".          ."
+      "--....--"
+</pre>
+                        </div>
+                        <div class="space-y-1">
+                            <p><span class="text-devu-accent">user@devubox</span>:<span class="text-blue-400">~</span>$
+                                neofetch</p>
+                            <p class="pt-2"><span class="text-devu-purple font-bold">OS</span>: Devubox-MX x86_64</p>
+                            <p><span class="text-devu-purple font-bold">Host</span>: RC1 Release Candidate</p>
+                            <p><span class="text-devu-purple font-bold">Kernel</span>: 6.1.0-18-amd64</p>
+                            <p><span class="text-devu-purple font-bold">Uptime</span>: Forever</p>
+                            <p><span class="text-devu-purple font-bold">Packages</span>: 2100 (dpkg)</p>
+                            <p><span class="text-devu-purple font-bold">Shell</span>: bash 5.2.15</p>
+                            <p><span class="text-devu-purple font-bold">Resolution</span>: 1920x1080</p>
+                            <p><span class="text-devu-purple font-bold">DE</span>: Openbox 3.6.1</p>
+                            <p><span class="text-devu-purple font-bold">WM Theme</span>: Devubox-Dark</p>
+                            <p><span class="text-devu-purple font-bold">Memory</span>: 580MiB / 16384MiB</p>
+
+                            <div class="pt-4 flex gap-2">
+                                <div class="w-8 h-4 bg-black"></div>
+                                <div class="w-8 h-4 bg-red-500"></div>
+                                <div class="w-8 h-4 bg-green-500"></div>
+                                <div class="w-8 h-4 bg-yellow-500"></div>
+                                <div class="w-8 h-4 bg-blue-500"></div>
+                                <div class="w-8 h-4 bg-purple-500"></div>
+                                <div class="w-8 h-4 bg-cyan-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-devu-accent/5"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Switch?</h2>
+            <p class="text-gray-400 mb-10 text-lg">Join the community. Experience stability. Reclaim your hardware.</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="download.html"
+                    class="px-8 py-4 bg-white text-black font-bold rounded-lg hover:scale-105 transition-transform flex items-center gap-2 shadow-lg shadow-white/10">
+                    <i data-lucide="download-cloud" class="w-5 h-5"></i> Download RC1
+                </a>
+                <a href="https://github.com/DevuboxLinux/Devubox-MX"
+                    class="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-lg hover:bg-white/5 transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-5 h-5"></i> View Source
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-[#020617] py-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i data-lucide="box" class="text-devu-accent w-5 h-5"></i>
+                <span class="font-mono text-sm text-gray-400">&copy; 2025 Devubox-MX</span>
+            </div>
+
+            <div class="text-sm text-gray-500 font-mono text-center md:text-right">
+                <p>Licensed under MIT. Made with <span class="text-red-500">❤</span> in Indonesia 🇮🇩</p>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="https://github.com/DevuboxLinux" class="text-gray-400 hover:text-white transition-colors"><i
+                        data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="https://sourceforge.net/projects/devubox-mx-edition/"
+                    class="text-gray-400 hover:text-white transition-colors"><i data-lucide="hard-drive"
+                        class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 3D Tilt Effect Logic
+        const card = document.getElementById('hero-card');
+        const container = document.querySelector('.perspective-container');
+
+        if (container && card) {
+            container.addEventListener('mousemove', (e) => {
+                const { offsetWidth: width, offsetHeight: height } = container;
+                const { offsetX: x, offsetY: y } = e;
+
+                const xRotation = ((y / height) - 0.5) * 20 * -1; // Rotate X axis
+                const yRotation = ((x / width) - 0.5) * 20; // Rotate Y axis
+
+                card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-opacity-95');
+            } else {
+                nav.classList.remove('shadow-lg', 'bg-opacity-80');
+            }
+        });
+    </script>
+</body>
+
+</html>
