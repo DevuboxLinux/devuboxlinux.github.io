@@ -219,8 +219,12 @@
                             <h2 class="card-title">Devubox-MX25 Base_sysvinit RC1 x64</h2>
                             <p class="text-muted">Release Date: November 18, 2025</p>
                             <div class="alert alert-warning" role="alert">
-                                <p class="mb-0"><strong>Disclaimer:</strong> This is an early beta release. We recommend
-                                    testing in a virtual machine.</p>
+                                <p class="mb-0"><strong>Disclaimer:</strong>Devubox-MX is currently in the RC1 phase.
+                                    It’s generally safe to install on real hardware, but you will need to reinstall once
+                                    the stable release is available. For the best experience and stability, especially
+                                    if you’re not familiar with pre-release software, we still recommend testing in a
+                                    virtual machine (VM). Tech-savvy users may proceed on bare metal at their own
+                                    discretion.</p>
                                 <hr>
                                 <p class="mb-0"><strong>Note:</strong> You can change the language (such as keyboard
                                     layout, locale, and browser), but some elements will remain in English (this is not
@@ -234,7 +238,8 @@
                                 class="btn btn-secondary btn-lg w-100 my-2">Sourceforge Page</a>
                             <div class="mt-4">
                                 <p class="mb-1"><strong>Default Username/Password:</strong> <code>demo</code> /
-                                    <code>demo</code></p>
+                                    <code>demo</code>
+                                </p>
                                 <p class="mb-0"><strong>Default Root Password:</strong> <code>root</code></p>
                             </div>
                         </div>
@@ -263,15 +268,18 @@
                                     <strong>System Firmware</strong><span>Legacy BIOS or UEFI (Non Secure Boot)</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>TPM</strong><span class="badge bg-success">NO TPM REQUIRED!</span></li>
+                                    <strong>TPM</strong><span class="badge bg-success">NO TPM REQUIRED!</span>
+                                </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                     <strong>Graphics Card</strong><span>Integrated or Discrete GPU with 3D acceleration
-                                        (128 MB+ VRAM)</span></li>
+                                        (128 MB+ VRAM)</span>
+                                </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                     <strong>Display</strong><span>1024x768 VGA Minimum / 1366x768+ Recommended</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Internet Connection</strong><span>Not Required for installation</span></li>
+                                    <strong>Internet Connection</strong><span>Not Required for installation</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -287,7 +295,8 @@
                                 your operating system.</p>
                             <div class="p-3 mb-3 rounded checksum-box">
                                 <p class="mb-1"><strong>File:</strong>
-                                    <code>Devubox-MX25_Base_sysvinit_RC1_x64.iso</code></p>
+                                    <code>Devubox-MX25_Base_sysvinit_RC1_x64.iso</code>
+                                </p>
                                 <p class="mb-1"><strong>md5sum:</strong> <code
                                         class="text-break">e5a14d52902cbf6c29d658a663689183</code></p>
                                 <p class="mb-0"><strong>sha256sum:</strong> <code
@@ -340,7 +349,8 @@
                             <p>You can also use the command line to make a Live USB. Let us assume your USB is
                                 identified as <code>sdb</code> (change as needed for your system), then copy and paste
                                 the command below into a Terminal Emulator with Sudo or Root Access. Replace
-                                <code>ISONAME.iso</code> with the actual name of the downloaded ISO file.</p>
+                                <code>ISONAME.iso</code> with the actual name of the downloaded ISO file.
+                            </p>
                             <pre class="p-2 rounded"><code>sudo dd bs=4M if=ISONAME.iso of=/dev/sdb && sync</code></pre>
                         </div>
                     </div>
