@@ -219,16 +219,9 @@
                             <h2 class="card-title">Devubox-MX25 Base_sysvinit RC1 x64</h2>
                             <p class="text-muted">Release Date: November 18, 2025</p>
                             <div class="alert alert-warning" role="alert">
-                                <p class="mb-0"><strong>Disclaimer:</strong> Devubox-MX is currently in the RC1 phase.
-                                    It’s generally safe to install on real hardware, but you will need to reinstall once
-                                    the stable release is available. For the best experience and stability, especially
-                                    if you’re not familiar with pre-release software, we still recommend testing in a
-                                    virtual machine (VM). Tech-savvy users may proceed on bare metal at their own
-                                    discretion.</p>
+                                <p class="mb-0"><strong>Disclaimer:</strong> This is an RC1 pre-release of Devubox‑MX and may contain bugs or incomplete features. It is not recommended for production systems—please back up any important data before installing. For most users we recommend testing RC1 in a virtual machine; experienced users may install on spare hardware at their own risk. A fresh installation may be required when upgrading to a future stable release.</p>
                                 <hr>
-                                <p class="mb-0"><strong>Note:</strong> You can change the language (such as keyboard
-                                    layout, locale, and browser), but some elements will remain in English (this is not
-                                    planned to change).</p>
+                                <p class="mb-0"><strong>Note:</strong> Devubox-MX is developed by a single developer from Indonesia, and currently, it is only available in English. You can change the language settings (such as keyboard layout and locale), but some elements will remain in English.</p>
                             </div>
                             <a href="https://sourceforge.net/projects/devubox-mx-edition/files/Devubox-MX25_Base_sysvinit_RC1_x64.iso/download"
                                 class="btn btn-primary btn-lg w-100 my-2">Download 64-bit (x86_64) ISO (5.3 GB)</a>
@@ -254,31 +247,39 @@
                     <div class="card custom-card shadow-sm h-100">
                         <div class="card-body p-4">
                             <h2 class="fw-bold text-center mb-4">System Requirements</h2>
+                            <p>Here are the system requirements for Devubox‑MX. It is a midweight distribution suitable for 64‑bit PCs from 2006 onward and runs well on older hardware (for example, Core 2 Duo systems).</p>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Processor</strong><span>1 gigahertz (GHz) or faster, 1 or more cores</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Processor</strong>
+                                    <span class="text-muted small">Minimum: 1 gigahertz (GHz) or faster, 1 or more cores<br>Recommended: Dual-core processor is sufficient for basic tasks.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Memory</strong><span>1GB Minimum* (With Swap/Zram) / 2GB+ Recommended</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Memory</strong>
+                                    <span class="text-muted small">Minimum: 1 GB RAM (with swap or ZRAM enabled for slightly better multitasking).<br>Recommended: 2 GB or more for optimal performance.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Storage</strong><span>16GB HDD Minimum / 20GB+ HDD or SSD Recommended</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Storage</strong>
+                                    <span class="text-muted small">Minimum: 16 GB HDD or SSD (using btrfs with zstd compression to fit more files in limited storage).<br>Recommended: 20 GB or more on HDD or SSD for better performance.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>System Firmware</strong><span>Legacy BIOS or UEFI (Non Secure Boot)</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">System Firmware</strong>
+                                    <span class="text-muted small">Compatible with Legacy BIOS or UEFI (Secure Boot is not yet supported).</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>TPM</strong><span class="badge bg-success">NO TPM REQUIRED!</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">TPM</strong>
+                                    <span class="text-muted small">TPM is not required (unlike Windows 11's strict requirement). TPM support in Linux varies and is optional.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Graphics Card</strong><span>Integrated or Discrete GPU with 3D acceleration
-                                        (128 MB+ VRAM)</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Graphics Card</strong>
+                                    <span class="text-muted small">Integrated or discrete GPU with at least 128 MB VRAM for basic graphics.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Display</strong><span>1024x768 VGA Minimum / 1366x768+ Recommended</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Display</strong>
+                                    <span class="text-muted small">Minimum resolution: 1024×768 (sufficient for the installer and light multitasking).<br>Recommended: 1366×768 or higher for better visuals.</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <strong>Internet Connection</strong><span>Not Required for installation</span>
+                                <li class="list-group-item d-flex flex-column align-items-start">
+                                    <strong class="mb-1">Internet Connection</strong>
+                                    <span class="text-muted small">Not required for installation, but recommended for updates and installing additional driver such as NVIDIA</span>
                                 </li>
                             </ul>
                         </div>
@@ -290,29 +291,23 @@
                     <div class="card custom-card shadow-sm h-100">
                         <div class="card-body p-4">
                             <h2 class="fw-bold text-center mb-4">Verify Your Download</h2>
-                            <h5 class="card-title">How to verify checksum of the ISO</h5>
-                            <p>To check the integrity of the downloaded ISO, use one of the methods below depending on
-                                your operating system.</p>
+                            <h5 class="card-title">How to Verify the Checksum of the ISO</h5>
+                            <p>To ensure the integrity of the downloaded ISO, please use one of the methods below based on your operating system:</p>
                             <div class="p-3 mb-3 rounded checksum-box">
                                 <p class="mb-1"><strong>File:</strong>
                                     <code>Devubox-MX25_Base_sysvinit_RC1_x64.iso</code>
                                 </p>
-                                <p class="mb-1"><strong>md5sum:</strong> <code
-                                        class="text-break">e5a14d52902cbf6c29d658a663689183</code></p>
-                                <p class="mb-0"><strong>sha256sum:</strong> <code
-                                        class="text-break">d2839f0c0c279cd51642256d67345860025c1504beb7d3231df1d9e2cbfc989a</code>
-                                </p>
+                                <p class="mb-1"><strong>MD5 Checksum:</strong> <code class="text-break">e5a14d52902cbf6c29d658a663689183</code></p>
+                                <p class="mb-0"><strong>SHA256 Checksum:</strong> <code class="text-break">d2839f0c0c279cd51642256d67345860025c1504beb7d3231df1d9e2cbfc989a</code></p>
                             </div>
-                            <p class="mb-1"><strong>MD5 Check (Linux):</strong></p>
+                            <h6 class="mt-3"><strong>MD5 Check (Linux):</strong></h6>
                             <pre class="p-2 rounded"><code>md5sum Devubox-MX25_Base_sysvinit_RC1_x64.iso</code></pre>
-                            <p class="mb-1"><strong>MD5 Check (Windows):</strong></p>
-                            <pre
-                                class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso MD5</code></pre>
-                            <p class="mb-1 mt-3"><strong>SHA256 Check (Linux):</strong></p>
+                            <h6 class="mt-3"><strong>MD5 Check (Windows):</strong></h6>
+                            <pre class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso MD5</code></pre>
+                            <h6 class="mt-3"><strong>SHA256 Check (Linux):</strong></h6>
                             <pre class="p-2 rounded"><code>sha256sum Devubox-MX25_Base_sysvinit_RC1_x64.iso</code></pre>
-                            <p class="mb-1 mt-3"><strong>SHA256 Check (Windows):</strong></p>
-                            <pre
-                                class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso SHA256</code></pre>
+                            <h6 class="mt-3"><strong>SHA256 Check (Windows):</strong></h6>
+                            <pre class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso SHA256</code></pre>
                         </div>
                     </div>
                 </div>
