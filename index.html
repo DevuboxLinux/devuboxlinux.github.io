@@ -5,17 +5,23 @@
     <!-- Required meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Devubox-MX - Midweight Simple Stable Desktop OS</title>
     <meta name="description"
         content="Devubox-MX is a midweight, simple, and stable desktop OS based on Devuan. Fast, secure, and ready for modern computing.">
     <meta name="keywords" content="Linux, Devubox-MX, Devuan, Debian, Openbox, Operating System, Indonesia, Desktop OS">
     <meta name="author" content="Devubox-MX Team">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="5NSUj4iUm8mQVvVLfs-nzIvBGkmw6tJR6EQUsfkQQM0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Devubox-MX - Midweight Simple Stable Desktop OS</title>
     <link rel="canonical" href="https://devuboxlinux.github.io/">
     <link rel='shortlink' href="https://devuboxlinux.github.io/" />
+
+    <!-- Performance Optimization: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devuboxlinux.github.io/">
@@ -36,14 +42,17 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
+    <!-- Google Fonts (with display=swap for performance) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS from CDN -->
-    <!-- This link fetches the latest Bootstrap 5 styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons CDN - Optimized to be non-blocking -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 
-    <!-- Custom CSS for minor style adjustments and dark mode -->
+    <!-- Custom CSS -->
     <style>
         :root {
             --body-bg-light: linear-gradient(to right, #e2e2e2, #c9d6ff);
@@ -167,11 +176,6 @@
         }
     </style>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -196,8 +200,7 @@
                     <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/">Source
                             Code</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme">
-                            <!-- Replaced SVG with Bootstrap Icons -->
+                        <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme" role="button" tabindex="0">
                             <i class="bi bi-sun-fill sun-icon"></i>
                             <i class="bi bi-moon-fill moon-icon"></i>
                         </a>
@@ -216,7 +219,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 hero-image-container">
                             <img src="Screenshot.webp" class="img-fluid rounded shadow hero-image-3d"
-                                alt="A screenshot of the Devubox-MX desktop, featuring a clean and modern interface with the Openbox window manager, a customized Tint2 panel, and various applications open.">
+                                alt="A screenshot of the Devubox-MX desktop, featuring a clean and modern interface with the Openbox window manager, a customized Tint2 panel, and various applications open."
+                                width="800" height="450" fetchpriority="high">
                         </div>
                         <div class="col-lg-6 order-lg-1">
                             <h1 class="display-6 fw-bold">Introducing Devubox-MX</h1>
@@ -248,7 +252,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/hardinfo2.svg"
                             class="card-img-top" alt="Midweight OS">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Midweight & Fast</h5>
+                            <h2 class="card-title h5">Midweight & Fast</h2>
                             <p class="card-text">Built with a customized Openbox window manager, Devubox-MX is designed
                                 to be fast and efficient. It runs smoothly on older 64-bit hardware (like the Core 2
                                 Duo) and uses only ~600MB of RAM, similar to XFCE.</p>
@@ -261,7 +265,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/github.svg"
                             class="card-img-top" alt="Community Driven">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Community Driven</h5>
+                            <h2 class="card-title h5">Community Driven</h2>
                             <p class="card-text">As an open-source project, our development is guided by user feedback.
                                 Join our forums to help shape the future of Devubox-MX.</p>
                         </div>
@@ -273,7 +277,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/security-high.svg"
                             class="card-img-top" alt="Secure OS">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Secure & Reliable</h5>
+                            <h2 class="card-title h5">Secure & Reliable</h2>
                             <p class="card-text">Based on the solid foundation of Devuan and MX Linux, Devubox-MX
                                 benefits from robust security features and a stable, reliable core system.</p>
                         </div>
@@ -285,7 +289,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/knemo.svg"
                             class="card-img-top" alt="Preloaded Apps">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Preloaded with Apps for Offline Use</h5>
+                            <h2 class="card-title h5">Preloaded with Apps for Offline Use</h2>
                             <p class="card-text">It's ready out of the box with multimedia codecs, games, LibreOffice,
                                 printer support, and top apps like GIMP, Inkscape, and OBS Studio.</p>
                         </div>
@@ -297,7 +301,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/jockey.svg"
                             class="card-img-top" alt="Driver Compatibility">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Broad Driver Compatibility</h5>
+                            <h2 class="card-title h5">Broad Driver Compatibility</h2>
                             <p class="card-text">Includes many proprietary firmware packages from the Debian
                                 `non-free-firmware` repository for out-of-the-box hardware support. With Advanced
                                 Hardware Support (AHS), it also supports a wide range of modern hardware.</p>
@@ -310,7 +314,7 @@
                         <img src="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/raw/refs/heads/master/Papirus/64x64/apps/nvidia.svg"
                             class="card-img-top" alt="NVIDIA Drivers">
                         <div class="card-body px-4 pb-4">
-                            <h5 class="card-title">Easy NVIDIA Driver Installation</h5>
+                            <h2 class="card-title h5">Easy NVIDIA Driver Installation</h2>
                             <p class="card-text">A simple one-click installer is included for proprietary NVIDIA drivers
                                 (requires an internet connection).</p>
                         </div>
@@ -379,50 +383,8 @@
 
 
     <!-- ======================= Scripts ======================= -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Countdown Timer Script -->
-    <script>
-        const countDownDate = new Date("Jan 1, 2026 00:00:00").getTime();
-        const countdownElement = document.getElementById("countdown-timer");
-        const downloadButton = document.getElementById("download-button");
-
-        const updateCountdown = () => {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-
-            if (distance < 0) {
-                if (countdownInterval) clearInterval(countdownInterval);
-                countdownElement.innerHTML = "AVAILABLE NOW!";
-                downloadButton.textContent = "Download";
-                downloadButton.classList.remove("btn-primary");
-                downloadButton.classList.add("btn-success");
-                return;
-            }
-
-            const releaseDate = new Date(countDownDate);
-            const currentDate = new Date();
-            let months = (releaseDate.getFullYear() - currentDate.getFullYear()) * 12;
-            months -= currentDate.getMonth();
-            months += releaseDate.getMonth();
-            if (releaseDate.getDate() < currentDate.getDate()) {
-                months--;
-            }
-
-            let output = "Approx. ";
-            if (months > 0) {
-                output += `${months} month${months > 1 ? 's' : ''}`;
-            } else {
-                const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
-                output += `${days} day${days > 1 ? 's' : ''}`;
-            }
-            countdownElement.innerHTML = output;
-        };
-
-        updateCountdown();
-        const countdownInterval = setInterval(updateCountdown, 3600000);
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Dark Mode Toggle Script -->
     <script>
@@ -446,13 +408,26 @@
 
             setTheme(getPreferredTheme())
 
-            const themeToggleButton = document.getElementById('theme-toggle-btn');
-
-            themeToggleButton.addEventListener('click', () => {
-                const currentTheme = getStoredTheme() || getPreferredTheme();
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                setStoredTheme(newTheme);
-                setTheme(newTheme);
+            // Wait for DOMContentLoaded to ensure elements exist
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeToggleButton = document.getElementById('theme-toggle-btn');
+                
+                if (themeToggleButton) {
+                    themeToggleButton.addEventListener('click', () => {
+                        const currentTheme = getStoredTheme() || getPreferredTheme();
+                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                        setStoredTheme(newTheme);
+                        setTheme(newTheme);
+                    });
+                    
+                    // Add keyboard accessibility for the toggle button (which is an anchor)
+                    themeToggleButton.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            themeToggleButton.click();
+                        }
+                    });
+                }
             });
 
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
