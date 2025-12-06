@@ -5,9 +5,6 @@
     <!-- Required meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Download Devubox-MX - Midweight Simple Stable Desktop OS</title>
     <meta name="description"
         content="Download the latest version of Devubox-MX, a midweight, simple, and stable desktop OS based on Devuan. Check system requirements and get started.">
     <meta name="keywords"
@@ -15,8 +12,17 @@
     <meta name="author" content="Devubox-MX Team">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="5NSUj4iUm8mQVvVLfs-nzIvBGkmw6tJR6EQUsfkQQM0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Download Devubox-MX - Midweight Simple Stable Desktop OS</title>
     <link rel="canonical" href="https://devuboxlinux.github.io/download/">
     <link rel='shortlink' href="https://devuboxlinux.github.io/download/" />
+
+    <!-- Performance Optimization: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devuboxlinux.github.io/download/">
@@ -37,14 +43,17 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
+    <!-- Google Fonts (with display=swap for performance) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS from CDN -->
-    <!-- This link fetches the latest Bootstrap 5 styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 
-    <!-- Custom CSS for minor style adjustments and dark mode -->
+    <!-- Custom CSS -->
     <style>
         :root {
             --body-bg-light: linear-gradient(to right, #e2e2e2, #c9d6ff);
@@ -163,11 +172,6 @@
         }
     </style>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -192,8 +196,7 @@
                     <li class="nav-item"><a class="nav-link" href="https://github.com/DevuboxLinux/Devubox-MX/">Source
                             Code</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme">
-                            <!-- Replaced SVG with Bootstrap Icons -->
+                        <a class="nav-link theme-toggle" id="theme-toggle-btn" title="Toggle theme" role="button" tabindex="0">
                             <i class="bi bi-sun-fill sun-icon"></i>
                             <i class="bi bi-moon-fill moon-icon"></i>
                         </a>
@@ -316,7 +319,7 @@
                     <div class="card custom-card shadow-sm h-100">
                         <div class="card-body p-4">
                             <h2 class="fw-bold text-center mb-4">Verify Your Download</h2>
-                            <h5 class="card-title">How to Verify the Checksum of the ISO</h5>
+                            <h2 class="card-title h5">How to Verify the Checksum of the ISO</h2>
                             <p>To ensure the integrity of the downloaded ISO, please use one of the methods below based
                                 on your operating system:</p>
                             <div class="p-3 mb-3 rounded checksum-box">
@@ -346,17 +349,17 @@
                                         <code>DAFA27F7C8EECEACDC56805C3FEF465AE7183F38</code></p>
                                 </div>
                             </div>
-                            <h6 class="mt-3"><strong>MD5 Check (Linux):</strong></h6>
+                            <h2 class="mt-3 h6"><strong>MD5 Check (Linux):</strong></h6>
                             <pre class="p-2 rounded"><code>md5sum Devubox-MX25_Base_sysvinit_RC1_x64.iso</code></pre>
-                            <h6 class="mt-3"><strong>MD5 Check (Windows):</strong></h6>
+                            <h2 class="mt-3 h6"><strong>MD5 Check (Windows):</strong></h6>
                             <pre
                                 class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso MD5</code></pre>
-                            <h6 class="mt-3"><strong>SHA256 Check (Linux):</strong></h6>
+                            <h2 class="mt-3 h6"><strong>SHA256 Check (Linux):</strong></h6>
                             <pre class="p-2 rounded"><code>sha256sum Devubox-MX25_Base_sysvinit_RC1_x64.iso</code></pre>
-                            <h6 class="mt-3"><strong>SHA256 Check (Windows):</strong></h6>
+                            <h2 class="mt-3 h6"><strong>SHA256 Check (Windows):</strong></h6>
                             <pre
                                 class="p-2 rounded"><code>certutil -hashfile Devubox-MX25_Base_sysvinit_RC1_x64.iso SHA256</code></pre>
-                            <h6 class="mt-3"><strong>Verify ISO Signature (Linux Only):</strong></h6>
+                            <h2 class="mt-3 h6"><strong>Verify ISO Signature (Linux Only):</strong></h6>
                             <p>To verify the integrity of the ISO, you can use the following GPG commands:</p>
                             <pre
                                 class="p-2 rounded"><code>gpg --no-default-keyring --keyring gnupg-ring:trustedkeys.gpg --keyserver keyserver.ubuntu.com --recv-keys 3FEF465AE7183F38</code></pre>
@@ -377,7 +380,7 @@
                                 <strong>Important:</strong> Make sure to back up all data on your USB drive to prevent
                                 data loss, as the drive will be formatted.
                             </div>
-                            <h5 class="mt-4">Using Graphical Tools</h5>
+                            <h2 class="mt-4 h5">Using Graphical Tools</h2>
                             <p>A full-featured bootable (Live) USB can be made from an ISO by using <a
                                     href="https://mxlinux.org/wiki/help-files/help-mx-live-usb-maker/" target="_blank"
                                     rel="noopener noreferrer">MX’s Live USB Maker</a> tool. Users of other Linux
@@ -396,7 +399,7 @@
                                     href="https://rufus.ie/" target="_blank" rel="noopener noreferrer">Rufus</a> or <a
                                     href="https://www.ventoy.net/" target="_blank" rel="noopener noreferrer">Ventoy</a>
                                 (Note: Ventoy is not working at the moment).</p>
-                            <h5 class="mt-4">Using the Command Line (Advanced)</h5>
+                            <h2 class="mt-4 h5">Using the Command Line (Advanced)</h2>
                             <p>You can also use the command line to make a Live USB. Let us assume your USB is
                                 identified as <code>sdb</code> (change as needed for your system), then copy and paste
                                 the command below into a Terminal Emulator with Sudo or Root Access. Replace
@@ -427,8 +430,8 @@
 
 
     <!-- ======================= Scripts ======================= -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Dark Mode Toggle Script -->
     <script>
@@ -452,13 +455,26 @@
 
             setTheme(getPreferredTheme())
 
-            const themeToggleButton = document.getElementById('theme-toggle-btn');
-
-            themeToggleButton.addEventListener('click', () => {
-                const currentTheme = getStoredTheme() || getPreferredTheme();
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                setStoredTheme(newTheme);
-                setTheme(newTheme);
+            // Wait for DOMContentLoaded to ensure elements exist
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeToggleButton = document.getElementById('theme-toggle-btn');
+                
+                if (themeToggleButton) {
+                    themeToggleButton.addEventListener('click', () => {
+                        const currentTheme = getStoredTheme() || getPreferredTheme();
+                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                        setStoredTheme(newTheme);
+                        setTheme(newTheme);
+                    });
+                    
+                    // Add keyboard accessibility for the toggle button (which is an anchor)
+                    themeToggleButton.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            themeToggleButton.click();
+                        }
+                    });
+                }
             });
 
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
